@@ -1,0 +1,17 @@
+name: check
+on: [push, pull_request]
+jobs:
+  library:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Version prüfen
+        run: python3 scripts/check_version.py
+      - name: Bibliothek prüfen
+        run: python3 skills/multi-expert-panel/scripts/check_library.py
+      - name: Beispielseiten bauen
+        run: |
+          python3 skills/multi-expert-panel/scripts/render.py skills/multi-expert-panel/assets/beispiel-daten.json /tmp/a.html
+          for f in demo/demo-*.json; do python3 skills/multi-expert-panel/scripts/render.py "$f" /tmp/b.html; done

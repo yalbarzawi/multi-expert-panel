@@ -1,0 +1,23 @@
+name: release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Tag und Version vergleichen
+        run: python3 scripts/check_version.py "$GITHUB_REF_NAME"
+      - run: python3 skills/multi-expert-panel/scripts/check_library.py
+      - run: python3 scripts/build_zip.py
+      - name: Release-Notizen aus CHANGELOG.md
+        run: python3 scripts/check_version.py --notes > dist/notes.md
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/multi-expert-panel.zip
+          body_path: dist/notes.md
