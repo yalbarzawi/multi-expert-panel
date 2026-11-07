@@ -1,6 +1,12 @@
 {
   "name": "multi-expert-panel",
-  "owner": {"name": "Yahia Albarzawi", "url": "https://github.com/yalbarzawi"},
+  "owner": {
+    "name": "Yahia Albarzawi",
+    "url": "https://github.com/yalbarzawi"
+  },
+  "metadata": {
+    "description": "Expert advice for any decision: a virtual panel of 343 expert roles finds gaps and flaws in your plan and ends with a verdict and concrete fixes. Any language."
+  },
   "plugins": [
     {
       "name": "multi-expert-panel",
