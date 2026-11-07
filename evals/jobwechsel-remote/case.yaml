@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: jobwechsel-remote
+expected_outcome: |
+  Entscheidungs-Modus für eine Karriereentscheidung: Beirat aus Mentor/Freund/Branchenexperte, wägt Gehaltsplus, Remote, Kündigungsfrist und Probezeit-Risiko ab, klares Urteil und wichtigste Bedingung.

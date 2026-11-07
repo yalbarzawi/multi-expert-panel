@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: php-login-sicherheit
+expected_outcome: |
+  Liest die Datei, nennt SQL-Injection und unsichere Passwortprüfung (md5) als kritisch, empfiehlt Prepared Statements und password_hash/password_verify, Gesamtnote niedrig (höchstens 4/10).
+context:
+  scaffold_script: place-files.sh

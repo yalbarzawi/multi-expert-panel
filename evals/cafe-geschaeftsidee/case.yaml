@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: cafe-geschaeftsidee
+expected_outcome: |
+  Entscheidungs-Modus: 3 Beiräte mit Optimist/Realist/Praktiker, Red Team (Pre-Mortem) mit 3 Gründen, Schwachstellen-Ranking, klares Urteil aus GO/GO MIT AUFLAGEN/PILOT/NO-GO, Erfolgsaussicht X/10, Finanz-Hinweis.

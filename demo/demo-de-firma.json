@@ -1,0 +1,73 @@
+{
+  "titel": "Neue Abteilung „Photovoltaik & Speicher für Gewerbekunden“",
+  "modus": "Entscheidung",
+  "ziel": "Lohnt sich die neue Abteilung, und wie starten wir ohne das Kerngeschäft zu schwächen?",
+  "stil": "HTML-Gesprächsprotokoll",
+  "datum": "2026-11-07",
+  "sprache": "de",
+  "tiefenmodus": true,
+  "gegenstand": "Elektrobetrieb mit 38 Mitarbeitenden, Schwerpunkt Gewerbe- und Industrieinstallation, Jahresumsatz rund 4,5 Mio. €.\nPlan der Geschäftsführung: eigene Abteilung für Photovoltaik und Batteriespeicher auf Hallen- und Bürodächern von Gewerbekunden.\nInvestition: 180.000 € (Fahrzeug, Werkzeug, Gerüst, Software, Schulungen), 3 neue Stellen (Projektleitung, 2 Monteure).\nZiel: 1,2 Mio. € Umsatz im zweiten Jahr.\nGewählte Diskussionspunkte: Kundennutzen und Nachfrage · Konkurrenz · Fachkräfte und Wirkung auf das Kerngeschäft · Kosten und Finanzierung.",
+  "teilnehmer": [
+    {"id": "mod", "rolle": "Moderatorin", "name": "Katrin", "seite": "moderator", "kategorie": "Feste Rolle", "fokus": "führt durch die vier Punkte und fällt das Urteil"},
+    {"id": "vet", "rolle": "Branchenveteran (Solarteur, 20 Jahre)", "name": "Rainer", "seite": "pro", "kategorie": "Fachexperte", "fokus": "was im Gewerbe-PV-Geschäft wirklich funktioniert", "unabhaengig": true},
+    {"id": "ctrl", "rolle": "Controllerin", "name": "Sabine", "seite": "neutral", "kategorie": "Fachexperte", "fokus": "Investition, Deckungsbeitrag, Break-even", "unabhaengig": true},
+    {"id": "kunde", "rolle": "Zielkunde: Betriebsleiter einer Spedition", "name": "Thomas", "seite": "neutral", "kategorie": "Betroffener", "fokus": "kaufe ich das von meinem Elektriker oder vom Spezialisten?", "unabhaengig": true},
+    {"id": "wett", "rolle": "Wettbewerbsanalyst", "name": "Deniz", "seite": "neutral", "kategorie": "Fachexperte", "fokus": "wer bietet Gewerbe-PV in der Region schon an", "unabhaengig": true},
+    {"id": "vl", "rolle": "Vertriebsleiter", "name": "Markus", "seite": "pro", "kategorie": "Hierarchie", "hierarchie": "Abteilungsleiter", "fokus": "welche Bestandskunden zuerst"},
+    {"id": "mont", "rolle": "Obermonteur im Kerngeschäft", "name": "Jens", "seite": "contra", "kategorie": "Betroffener", "fokus": "wer macht die Arbeit, die heute schon liegen bleibt?"},
+    {"id": "foe", "rolle": "Fördermittelberaterin", "name": "Leyla", "seite": "neutral", "kategorie": "Fachexperte", "fokus": "Kredite, Zuschüsse, Weiterbildung"},
+    {"id": "red", "rolle": "Red Team", "name": "Frank", "seite": "contra", "kategorie": "Persönlichkeitstyp", "typ": "Skeptiker", "fokus": "Pre-Mortem: warum ist die Abteilung nach 18 Monaten zu?", "unabhaengig": true},
+    {"id": "beo", "rolle": "Beobachter", "seite": "neutral", "kategorie": "Feste Rolle", "fokus": "was übersehen alle?"}
+  ],
+  "gespraech": [
+    {"runde": "Runde 1 · Kundennutzen und Nachfrage"},
+    {"von": "mod", "text": "Vier Punkte, ein Ziel: Lohnt sich die Abteilung, und wie starten wir, ohne dem Kerngeschäft zu schaden? Fünf von euch haben vorab unabhängig voneinander geprüft. Rainer, du zuerst."},
+    {"von": "vet", "text": "Bei Privatkunden ist die Nachfrage nach dem Boom deutlich abgekühlt, da würde ich heute nicht einsteigen. Im Gewerbe ist es anders: große Dachflächen, Stromverbrauch am Tag, also genau dann, wenn die Anlage liefert. Da rechnet sich Eigenverbrauch ohne viel Förderung."},
+    {"von": "kunde", "text": "Wir haben 4.000 m² Hallendach und laufen tagsüber mit Kühlung und Ladesäulen. Interessiert bin ich sofort. Aber ich kaufe keine Anlage für sechsstellige Beträge von jemandem, der noch keine gebaut hat.", "zitat": "eigene Abteilung für Photovoltaik und Batteriespeicher"},
+    {"von": "vl", "text": "Genau da haben wir einen Vorteil: Wir sind schon in den Hallen. Ich habe 60 Gewerbe-Bestandskunden, bei mindestens 15 kenne ich Dach und Verbrauch. Wir müssen niemanden kalt anrufen."},
+    {"von": "kunde", "text": "Das ist ein Argument. Mein Elektriker kennt meinen Zählerschrank und den Netzanschluss. Ein Solar-Vertriebler von außen kennt nur mein Dach von Google Maps."},
+    {"runde": "Runde 2 · Konkurrenz"},
+    {"von": "wett", "text": "Ich habe den Umkreis von 50 km angesehen: mehrere reine Solarfirmen, die meisten auf Privatkunden ausgerichtet, einige sind nach dem Boom wieder weg. Für Gewerbedächer ab 100 kWp gibt es wenige Anbieter, die auch Netzanschluss, Mittelspannung und Lastmanagement aus einer Hand machen."},
+    {"von": "red", "text": "Wenige Anbieter heißt nicht wenig Konkurrenz. Die großen Projektierer kommen mit Pachtmodellen: Der Kunde zahlt nichts und kauft nur den Strom. Gegen null Euro Investition verliert ihr jedes Angebot."},
+    {"von": "vet", "text": "Teilweise. Pacht lohnt sich für die erst ab sehr großen Dächern. Bei 100 bis 500 kWp, also typischer Mittelstand, ist der Kauf meist günstiger, und den Service vor Ort bietet der Projektierer nicht."},
+    {"von": "red", "text": "Dann gehört genau diese Grenze ins Angebot: welche Dachgröße wir machen und welche nicht. Sonst kämpft ihr gegen Gegner, die ihr nicht schlagen könnt."},
+    {"runde": "Runde 3 · Fachkräfte und Wirkung auf das Kerngeschäft"},
+    {"von": "mont", "text": "Ich sag's direkt: Wir haben heute schon sechs Wochen Vorlauf bei Aufträgen. Wenn die zwei besten Leute aufs Dach gehen, warten unsere Industriekunden noch länger. Und die zahlen unser Gehalt."},
+    {"von": "ctrl", "text": "Das sehe ich auch in den Zahlen. Das Kerngeschäft bringt einen stabilen Deckungsbeitrag. Wenn dort nur 5 % Umsatz wegfallen, weil Leute abgezogen werden, frisst das einen großen Teil dessen, was die neue Abteilung im ersten Jahr verdient."},
+    {"von": "vl", "text": "Deshalb ja neue Stellen. Wir nehmen niemanden aus dem Kerngeschäft."},
+    {"von": "mont", "text": "Auf dem Papier. In der Praxis findest du keinen Projektleiter für PV in drei Monaten. Dann heißt es „Jens, kannst du mal eben die Anlage abnehmen?“"},
+    {"von": "foe", "text": "Für die Schulung eigener Leute gibt es Förderung für Weiterbildung. Ein Weg wäre: zwei jüngere Gesellen gezielt qualifizieren und den Projektleiter extern suchen, mit klarer Regel, dass das Kerngeschäft Vorrang hat."},
+    {"von": "red", "text": "Mein Pre-Mortem, 18 Monate später ist die Abteilung zu. Erstens: Projektleiter nie gefunden, der Chef hat es nebenbei gemacht. Zweitens: zwei Anlagen mit Verzug und Ärger beim Netzbetreiber, danach keine Empfehlungen. Drittens: das Kerngeschäft hat einen Großkunden verloren, weil Termine gerissen wurden."},
+    {"runde": "Runde 4 · Kosten und Finanzierung"},
+    {"von": "ctrl", "text": "180.000 € Investition plus drei Gehälter: Ohne Aufträge kostet die Abteilung im ersten Jahr deutlich über 300.000 €. Die 1,2 Mio. € Umsatz im zweiten Jahr sind möglich, aber erst nach Referenzen. Ich rechne mit einem Jahr Anlaufverlust."},
+    {"von": "foe", "text": "Die Investition ist ein typischer Fall für ein Förderdarlehen über die Hausbank. Wichtig: Den Antrag stellt man vor dem Kauf. Zuschüsse für Weiterbildung kommen extra."},
+    {"von": "vet", "text": "Und klein anfangen. Erst Anlagen auf den eigenen Hallen und bei drei Stammkunden, mit gemietetem Gerüst. Das Fahrzeug kauft man, wenn die Aufträge da sind."},
+    {"von": "kunde", "text": "Wenn ihr mir die Anlage eines anderen Kunden zeigen könnt, mit echten Ertragsdaten, bin ich im ersten Jahr dabei."},
+    {"von": "beo", "text": "Niemand hat über Wartung gesprochen. Ein Wartungsvertrag pro Anlage bringt jedes Jahr wiederkehrenden Umsatz und genau den Service, den die großen Projektierer nicht bieten. Das sollte Teil jedes Angebots sein."},
+    {"von": "mod", "text": "Einig sind sich alle beim Gewerbe statt Privatkunden und beim Vorteil durch die Bestandskunden. Offen bleibt die Fachkräftefrage, und die entscheidet. Deshalb: ja, aber in Stufen."}
+  ],
+  "fazit": {
+    "urteil": "GO MIT AUFLAGEN",
+    "note": "6/10",
+    "note_fuer": "Erfolgsaussicht der Abteilung in 24 Monaten",
+    "begruendung": "Der Markt im Gewerbe ist da, und die 60 Bestandskunden sind ein echter Vorteil gegenüber reinen Solarfirmen. Solange aber kein Projektleiter gefunden ist, gefährdet die Abteilung das Kerngeschäft. Deshalb ist die Note bei 6 gedeckelt.",
+    "kritikpunkte": [
+      {"gewicht": "kritisch", "text": "Projektleitung PV nicht besetzt; ohne sie werden Leute aus dem Kerngeschäft abgezogen", "von": ["mont", "red", "ctrl"]},
+      {"gewicht": "mittel", "text": "Keine Referenzanlage: Gewerbekunden kaufen sechsstellige Anlagen nur mit Nachweis", "von": ["kunde", "vet"]},
+      {"gewicht": "mittel", "text": "Anlaufverlust im ersten Jahr ist nicht finanziert", "von": ["ctrl", "foe"]},
+      {"gewicht": "mittel", "text": "Keine klare Grenze gegen Projektierer mit Pachtmodellen (Dachgröße)", "von": ["red", "wett"]},
+      {"gewicht": "klein", "text": "Wartungsverträge fehlen im Geschäftsmodell", "von": ["beo"]}
+    ],
+    "verbesserungen": [
+      {"was": "Stufe 1: eigene Hallen und 3 Stammkunden", "warum": "liefert Referenzen und Ertragsdaten, bevor groß investiert wird", "vorher": "Abteilung mit 3 neuen Stellen und 180.000 € Investition auf einmal", "nachher": "6 Monate Pilot mit 2 qualifizierten Gesellen, gemietetem Gerüst und 3 Anlagen bei Stammkunden"},
+      {"was": "Regel „Kerngeschäft hat Vorrang“ schriftlich festlegen", "warum": "verhindert, dass Termine bei Industriekunden reißen"},
+      {"was": "Angebot auf 100–500 kWp begrenzen", "warum": "dort ist Kauf meist günstiger als Pacht, und der Service vor Ort zählt"},
+      {"was": "Wartungsvertrag in jedes Angebot", "warum": "wiederkehrender Umsatz und Abgrenzung zu Projektierern"},
+      {"was": "Förderdarlehen vor dem Kauf beantragen", "warum": "nachträglich gibt es meist keine Förderung"}
+    ],
+    "wichtigste_bedingung": "Ein Projektleiter PV ist eingestellt, bevor Stufe 2 (eigenes Team, Fahrzeug) startet.",
+    "naechster_schritt": "Diese Woche: Liste der 15 Bestandskunden mit bekanntem Dach und Verbrauch erstellen und die 3 mit dem höchsten Tagverbrauch für eine kostenlose Ertragsanalyse ansprechen.",
+    "naechste_sitzung": ["Projektleiter finden: Gehalt, Profil, Alternativen", "Angebot und Preis für Gewerbekunden"],
+    "hinweis": "Förderbedingungen und Netzanschluss vor der Entscheidung mit Hausbank, Fördermittelberatung und Netzbetreiber klären. Das Panel ersetzt keine Fachberatung."
+  }
+}

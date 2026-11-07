@@ -1,0 +1,180 @@
+{
+ "titel": "Boutique en ligne de céramique artisanale",
+ "modus": "Entscheidung",
+ "ziel": "Vaut-il la peine de commencer à temps partiel avec 5 000 € ?",
+ "stil": "Compte rendu HTML",
+ "datum": "2026-11-07",
+ "sprache": "fr",
+ "gegenstand": "Je veux vendre en ligne mes tasses et bols faits main. Budget 5 000 €, 6 mois, à temps partiel à côté de mon travail.",
+ "teilnehmer": [
+  {
+   "id": "moderator",
+   "rolle": "Modérateur",
+   "seite": "moderator",
+   "kategorie": "Feste Rolle",
+   "fokus": "Ouvre, écoute, rend le verdict"
+  },
+  {
+   "id": "ecom",
+   "rolle": "Experte e-commerce",
+   "name": "Lena",
+   "seite": "pro",
+   "kategorie": "Fachexperte",
+   "typ": "Optimist",
+   "fokus": "Boutique, expédition, retours"
+  },
+  {
+   "id": "zahlen",
+   "rolle": "Homme des chiffres",
+   "name": "Sam",
+   "seite": "neutral",
+   "kategorie": "Persönlichkeitstyp",
+   "fokus": "Marges, seuil de rentabilité"
+  },
+  {
+   "id": "kunde",
+   "rolle": "Cliente cible",
+   "name": "Mia",
+   "seite": "neutral",
+   "kategorie": "Betroffener",
+   "fokus": "Est-ce que j'achèterais ?"
+  },
+  {
+   "id": "red",
+   "rolle": "Red team",
+   "name": "Karl",
+   "seite": "contra",
+   "kategorie": "Persönlichkeitstyp",
+   "typ": "Sceptique",
+   "fokus": "Pre-mortem : pourquoi ça a échoué ?"
+  },
+  {
+   "id": "beobachter",
+   "rolle": "Observateur",
+   "seite": "neutral",
+   "kategorie": "Feste Rolle",
+   "fokus": "Qu'est-ce que tout le monde oublie ?"
+  }
+ ],
+ "gespraech": [
+  {
+   "runde": "Tour 1 · Demande"
+  },
+  {
+   "von": "moderator",
+   "text": "Céramique artisanale, 5 000 €, temps partiel. Mia, tu achèterais ?"
+  },
+  {
+   "von": "kunde",
+   "text": "Oui, si je vois la tasse à la lumière du jour et que je sais qui l'a faite. 35 € me va, 12 € de livraison non."
+  },
+  {
+   "von": "ecom",
+   "text": "C'est la force du projet : une histoire et un visage. D'abord Instagram et Etsy, la boutique propre plus tard."
+  },
+  {
+   "runde": "Tour 2 · Chiffres"
+  },
+  {
+   "von": "zahlen",
+   "text": "Matière, four, emballage, frais Etsy : environ 14 € par tasse. À 35 €, il reste 21 €. 30 tasses par mois couvrent les coûts, pas un salaire.",
+   "zitat": "Budget 5 000 €"
+  },
+  {
+   "von": "red",
+   "text": "Supposons l'échec après 12 mois. La casse à l'expédition a mangé la marge, et tu t'es épuisée à faire 30 tasses par mois à côté de ton travail."
+  },
+  {
+   "von": "ecom",
+   "text": "La casse se règle avec un emballage testé. L'épuisement est le vrai risque, d'accord."
+  },
+  {
+   "von": "beobachter",
+   "text": "Personne n'a parlé du four : peux-tu vraiment produire 30 pièces par mois chez toi, et est-ce autorisé dans ton appartement ?"
+  }
+ ],
+ "fazit": {
+  "urteil": "PILOT",
+  "note": "6/10",
+  "note_fuer": "Chances d'une activité secondaire rentable en 12 mois",
+  "begruendung": "Vraie demande pour des pièces artisanales avec une histoire, mais marges faibles et temps de production limité.",
+  "kritikpunkte": [
+   {
+    "gewicht": "kritisch",
+    "text": "Capacité de production et four à domicile incertains",
+    "von": [
+     "beobachter"
+    ]
+   },
+   {
+    "gewicht": "mittel",
+    "text": "Frais d'expédition et casse peuvent manger la marge",
+    "von": [
+     "kunde",
+     "red"
+    ]
+   },
+   {
+    "gewicht": "klein",
+    "text": "Boutique propre trop tôt ; d'abord les places de marché",
+    "von": [
+     "ecom"
+    ]
+   }
+  ],
+  "verbesserungen": [
+   {
+    "was": "Tester avant d'investir",
+    "nachher": "Vendre 20 pièces sur Etsy en 6 semaines avant de dépenser plus de 500 €."
+   },
+   {
+    "was": "Test d'emballage",
+    "nachher": "Envoyer 5 colis test à des amis et compter la casse."
+   }
+  ],
+  "wichtigste_bedingung": "Pouvoir produire 30 pièces par mois sans s'épuiser.",
+  "naechster_schritt": "Ouvrir une boutique Etsy avec 10 pièces et suivre les ventes pendant 6 semaines."
+ },
+ "beschriftungen": {
+  "panel": "Panel d'experts",
+  "ziel": "Objectif",
+  "gespraech": "La discussion",
+  "fazit": "Synthèse",
+  "urteil": "Verdict du panel",
+  "note": "Note globale",
+  "next": "Prochaine étape",
+  "seite": {
+   "pro": "pour",
+   "contra": "contre",
+   "neutral": "neutre",
+   "moderator": "modération"
+  },
+  "modi": {
+   "Entscheidung": "Décision"
+  },
+  "kat": {
+   "Fachexperte": "Expert",
+   "Persönlichkeitstyp": "Personnalité",
+   "Betroffener": "Concerné",
+   "Feste Rolle": "Rôle fixe"
+  },
+  "was": "Ce qui est évalué",
+  "wer": "Autour de la table",
+  "personen": "personnes",
+  "beitraege": "interventions",
+  "stil": "Style",
+  "verb": "Améliorations concrètes",
+  "krit": "Critiques du panel",
+  "bed": "Condition clé",
+  "q": [
+   "« ",
+   " »"
+  ],
+  "gew": {
+   "kritisch": "critique",
+   "mittel": "moyen",
+   "klein": "mineur"
+  },
+  "footer": "Créé avec le skill multi-expert-panel. Toutes les voix sont simulées et ne remplacent pas un conseil professionnel."
+ }
+}

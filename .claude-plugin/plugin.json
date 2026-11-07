@@ -1,0 +1,10 @@
+{
+  "name": "multi-expert-panel",
+  "version": "1.0.0",
+  "description": "Expert advice for any decision: a virtual panel of 343 expert roles reviews your idea, plan, text, CV, code or website, finds gaps and flaws, and ends with a verdict and concrete fixes. Any language.",
+  "author": {"name": "Yahia Albarzawi", "url": "https://github.com/yalbarzawi"},
+  "homepage": "https://github.com/yalbarzawi/multi-expert-panel",
+  "repository": "https://github.com/yalbarzawi/multi-expert-panel",
+  "license": "MIT",
+  "keywords": ["expert-panel", "decision-making", "red-team", "review", "feedback", "arabic", "multilingual"]
+}

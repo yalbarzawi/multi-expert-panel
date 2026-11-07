@@ -1,0 +1,52 @@
+{
+  "titel": "Ceramics shop · Shipping and breakage",
+  "modus": "Entscheidung",
+  "ziel": "Can shipping work without eating the margin?",
+  "stil": "HTML discussion log",
+  "datum": "2026-11-09",
+  "sprache": "en",
+  "serie": {
+    "name": "Online shop for handmade ceramics",
+    "nummer": 2,
+    "thema": "Shipping and breakage",
+    "rueckblick": [
+      "Session 1: PILOT 6/10. Demand is real, margins are thin.",
+      "Open: shipping cost and breakage can eat the margin (E-commerce expert).",
+      "Open: can 30 pieces a month be produced next to a day job?"
+    ]
+  },
+  "teilnehmer": [
+    {"id": "mod", "rolle": "Moderator", "name": "Clara", "seite": "moderator", "kategorie": "Feste Rolle", "fokus": "same moderator as in session 1"},
+    {"id": "log", "rolle": "Logistics specialist", "name": "Jonas", "seite": "contra", "kategorie": "Fachexperte", "fokus": "packaging, carriers, breakage rates", "unabhaengig": true},
+    {"id": "ecom", "rolle": "E-commerce expert", "name": "Mia", "seite": "pro", "kategorie": "Fachexperte", "fokus": "raised the shipping risk in session 1"},
+    {"id": "num", "rolle": "Numbers person", "name": "Ben", "seite": "neutral", "kategorie": "Persönlichkeitstyp", "fokus": "cost per order"},
+    {"id": "kunde", "rolle": "Target customer", "name": "Lea", "seite": "neutral", "kategorie": "Betroffener", "fokus": "what shipping price is acceptable?"}
+  ],
+  "gespraech": [
+    {"runde": "Round 1 · Packaging"},
+    {"von": "mod", "text": "In session 1, Mia warned that shipping could eat the margin. Today we only look at that."},
+    {"von": "log", "text": "Ceramics need double boxing. That adds about €2.50 per order in material and five minutes of packing."},
+    {"von": "ecom", "text": "Then bundle: free shipping from two pieces. A single mug ships at cost."},
+    {"von": "kunde", "text": "I accept €4.90 shipping for one mug. For two pieces I expect it to be free."},
+    {"runde": "Round 2 · Numbers"},
+    {"von": "num", "text": "With bundles the average order is €78. Shipping and packaging stay under 12% of revenue."},
+    {"von": "log", "text": "Only if breakage stays below 2%. Test 20 parcels before you promise anything."}
+  ],
+  "fazit": {
+    "urteil": "GO WITH CONDITIONS",
+    "note": "7/10",
+    "note_fuer": "chance of a profitable side business in 12 months",
+    "begruendung": "Bundling and double boxing make shipping manageable. The overall verdict improves from PILOT 6/10 to GO WITH CONDITIONS 7/10.",
+    "kritikpunkte": [
+      {"gewicht": "mittel", "text": "Breakage rate is still an assumption", "von": ["log"]},
+      {"gewicht": "klein", "text": "Packing time is not yet part of the production plan", "von": ["num"]}
+    ],
+    "verbesserungen": [
+      {"was": "Free shipping from two pieces", "warum": "raises the average order and spreads the shipping cost"},
+      {"was": "Send 20 test parcels to friends", "warum": "measures the real breakage rate before launch"}
+    ],
+    "wichtigste_bedingung": "Breakage stays below 2% in the 20-parcel test.",
+    "naechster_schritt": "Pack and ship 20 test parcels this month and count the breakage.",
+    "naechste_sitzung": ["Production time next to a day job", "Pricing and first marketing channel"]
+  }
+}

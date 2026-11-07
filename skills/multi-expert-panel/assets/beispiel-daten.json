@@ -1,0 +1,52 @@
+{
+ "titel": "Anschreiben Frontend-Entwickler (React/TypeScript)",
+ "modus": "Analyse",
+ "ziel": "Einladung zum Gespräch",
+ "stil": "HTML-Gesprächsprotokoll",
+ "datum": "2026-11-06",
+ "gegenstand": "Sehr geehrte Damen und Herren,\n\nhiermit bewerbe ich mich mit großem Interesse auf die Stelle als Frontend-Entwickler (m/w/d). Ich bin ein leidenschaftlicher und motivierter Entwickler mit Teamgeist und Liebe zum Detail. In meiner bisherigen Tätigkeit habe ich viele Websites umgesetzt und bin mit modernen Technologien vertraut.\n\nIch arbeite gerne im Team, bin aber auch selbständig und belastbar. Neue Herausforderungen sehe ich als Chance. Gerne würde ich mein Wissen in Ihr Unternehmen einbringen und mich weiterentwickeln.\n\nÜber eine Einladung zu einem Vorstellungsgespräch freue ich mich sehr.\n\nMit freundlichen Grüßen\nMax Beispiel",
+ "teilnehmer": [
+  {"id": "moderator", "rolle": "Moderator / Zuhörer","seite": "moderator", "kategorie": "Feste Rolle", "fokus": "Hört zu und fasst am Ende alle Kritikpunkte mit konkreten Verbesserungen zusammen"},
+  {"id": "hr", "rolle": "HR-Personalerin", "name": "Sabine", "seite": "contra", "kategorie": "Fachexperte", "typ": "Erbsenzähler", "fokus": "Pflichtangaben, Vollständigkeit, erster Eindruck"},
+  {"id": "hm", "rolle": "Hiring Manager Frontend", "name": "Tobias", "seite": "neutral", "kategorie": "Hierarchie", "hierarchie": "Teamleiter", "fokus": "Passt der Stack? Gibt es Belege für React und TypeScript?"},
+  {"id": "leser", "rolle": "Ungeduldiger Leser", "name": "Jana", "seite": "contra", "kategorie": "Persönlichkeitstyp", "typ": "Ungeduldiger Leser", "fokus": "Was bleibt nach 30 Sekunden hängen?"},
+  {"id": "mentor", "rolle": "Karriere-Mentor", "name": "Klaus", "seite": "pro", "kategorie": "Fachexperte", "typ": "Optimist", "fokus": "Was steckt Gutes darin, und wie holt man es heraus?"}
+ ],
+ "gespraech": [
+  {"runde": "Runde 1 · Erster Eindruck"},
+  {"von": "moderator", "text": "Ziel ist eine Einladung zum Gespräch für eine Remote-Stelle mit React und TypeScript. Jana, du hast 30 Sekunden. Was bleibt hängen?"},
+  {"von": "leser", "text": "Ehrlich gesagt: nichts. Ich lese „leidenschaftlich“, „Teamgeist“, „belastbar“ und lege es weg. Ich weiß nicht, was diese Person kann.", "zitat": "Ich bin ein leidenschaftlicher und motivierter Entwickler mit Teamgeist und Liebe zum Detail."},
+  {"von": "mentor", "text": "Das ist hart, aber der Text ist kurz und fehlerfrei. Das ist schon mehr, als viele schaffen. Die Grundstruktur stimmt, es fehlt nur Inhalt."},
+  {"von": "hr", "text": "Kurz ist nicht das Problem, Klaus. Die Anzeige verlangt ausdrücklich Gehaltsvorstellung und frühesten Eintrittstermin. Beides fehlt. Bei 150 Bewerbungen sortiere ich das als Erstes aus, weil die Anzeige offenbar nicht gelesen wurde."},
+  {"von": "mentor", "text": "Ist das nicht ein bisschen streng für einen formalen Punkt?"},
+  {"von": "hr", "text": "Nein. Wenn jemand schon bei der Bewerbung Vorgaben überliest, frage ich mich, wie er mit Tickets umgeht."},
+  {"runde": "Runde 2 · Fachliche Passung"},
+  {"von": "hm", "text": "Mir fehlt das Wichtigste: React und TypeScript kommen nicht vor. „Moderne Technologien“ kann jQuery heißen. Und „viele Websites“ ist keine Zahl.", "zitat": "bin mit modernen Technologien vertraut"},
+  {"von": "mentor", "text": "Vielleicht hat er die Erfahrung ja, und schreibt sie nur nicht hin. Dann ist das leicht zu beheben."},
+  {"von": "hm", "text": "Möglich. Aber ich lade niemanden auf Verdacht ein. Ich brauche ein Projekt: Was wurde mit React gebaut, wie groß, mit welchem Ergebnis? Und weil die Stelle remote ist: Wie arbeitet er verteilt? Pull Requests, Code-Reviews, asynchron?"},
+  {"von": "leser", "text": "Und bitte nicht als Absatz voller Adjektive. Eine Zahl im ersten Satz, und ich lese weiter."},
+  {"runde": "Runde 3 · Was jetzt?"},
+  {"von": "mentor", "text": "Dann lasst uns sagen, was bleiben darf: der kurze Aufbau und der freundliche Schluss. Absatz 2 kann komplett weg."},
+  {"von": "hr", "text": "Einverstanden, wenn Gehalt und Eintritt in einen eigenen Satz kommen. Und eine Anrede mit Namen, der steht meist in der Anzeige."},
+  {"von": "hm", "text": "Ich bleibe dabei: Ohne React-Beleg ist es für mich ein Nein, egal wie gut der Rest wird."}
+ ],
+ "fazit": {
+  "note": "3/10",
+  "note_fuer": "Chance auf eine Einladung",
+  "begruendung": "Zwei Pflichtangaben und der geforderte Stack fehlen, der Rest ist austauschbar. Kurz und fehlerfrei ist eine gute Basis.",
+  "kritikpunkte": [
+   {"gewicht": "kritisch", "text": "Gehaltsvorstellung und Eintrittstermin fehlen, obwohl die Anzeige sie verlangt", "von": ["hr"]},
+   {"gewicht": "kritisch", "text": "React, TypeScript und Berufsjahre werden nicht genannt", "von": ["hm", "leser"]},
+   {"gewicht": "mittel", "text": "Kein konkretes Projekt als Beleg, keine Remote-Erfahrung", "von": ["hm"]},
+   {"gewicht": "mittel", "text": "Absatz 2 besteht nur aus Floskeln", "von": ["leser", "mentor"]},
+   {"gewicht": "klein", "text": "Unpersönliche Anrede", "von": ["hr"]}
+  ],
+  "verbesserungen": [
+   {"was": "Mit Stack und Zahl einsteigen", "vorher": "hiermit bewerbe ich mich mit großem Interesse auf die Stelle als Frontend-Entwickler (m/w/d).", "nachher": "Seit fünf Jahren entwickle ich Frontends mit React und TypeScript, zuletzt das Kundenportal für [Branche] mit 20.000 Nutzern."},
+   {"was": "Floskel-Absatz durch Beleg ersetzen", "vorher": "Ich arbeite gerne im Team, bin aber auch selbständig und belastbar.", "nachher": "Ich arbeite seit drei Jahren vollständig remote, mit Pull Requests, Code-Reviews und asynchroner Abstimmung."},
+   {"was": "Pflichtangaben ergänzen", "warum": "Die Anzeige verlangt beides ausdrücklich", "nachher": "Meine Gehaltsvorstellung liegt bei [X] € brutto im Jahr. Beginnen kann ich ab [Datum]."},
+   {"was": "Anrede mit Namen", "vorher": "Sehr geehrte Damen und Herren,", "nachher": "Sehr geehrte Frau [Name aus der Anzeige],"}
+  ],
+  "naechster_schritt": "Absatz 2 löschen und durch die Sätze aus Vorschlag 1 bis 3 mit echten Zahlen ersetzen."
+ }
+}

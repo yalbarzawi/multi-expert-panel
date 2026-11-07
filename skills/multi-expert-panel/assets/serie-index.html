@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gesprächsreihe</title>
+<style>
+:root{
+  --bg:#f6f5f1; --card:#ffffff; --ink:#1d1c1a; --muted:#6b6862; --line:#e4e1da;
+  --pro:#2f7d55; --pro-bg:#e8f3ec; --contra:#b4442f; --contra-bg:#f8e9e5;
+  --neutral:#5a6472; --neutral-bg:#eceff3; --mod:#3d4f9f; --mod-bg:#eaedf8;
+  --krit:#b4442f; --mittel:#b7791f; --klein:#5a6472;
+  --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.05),0 4px 16px rgba(0,0,0,.04);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#161614; --card:#1f1f1c; --ink:#ecebe7; --muted:#a19d95; --line:#33322e;
+    --pro:#6cc595; --pro-bg:#1d2c23; --contra:#ec8b76; --contra-bg:#331f1a;
+    --neutral:#a6b0bd; --neutral-bg:#252a30; --mod:#9aa8ec; --mod-bg:#22263a;
+    --krit:#ec8b76; --mittel:#e3b062; --klein:#a6b0bd; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#161614; --card:#1f1f1c; --ink:#ecebe7; --muted:#a19d95; --line:#33322e;
+  --pro:#6cc595; --pro-bg:#1d2c23; --contra:#ec8b76; --contra-bg:#331f1a;
+  --neutral:#a6b0bd; --neutral-bg:#252a30; --mod:#9aa8ec; --mod-bg:#22263a;
+  --krit:#ec8b76; --mittel:#e3b062; --klein:#a6b0bd; --shadow:none;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:40px 16px 80px}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+h1{font-size:30px;line-height:1.2;margin:0 0 12px;letter-spacing:-.01em}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;color:var(--muted);font-size:14px}
+.meta b{color:var(--ink);font-weight:600}
+h2{font-size:18px;margin:36px 0 14px}
+.verlauf{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.verlauf .pfeil{color:var(--muted)}
+.pill{border-radius:99px;padding:4px 12px;font-weight:650;font-size:14px;background:var(--u-bg);color:var(--u)}
+.liste{display:grid;gap:12px;position:relative}
+.sitzung{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);text-decoration:none;color:inherit}
+.sitzung:hover{border-color:var(--mod)}
+.nr{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:700;background:var(--mod-bg);color:var(--mod)}
+.sitzung h3{margin:0 0 2px;font-size:17px}
+.sitzung .klein{font-size:13px;color:var(--muted)}
+.sitzung p{margin:6px 0 0;font-size:14.5px}
+.sitzung .next{margin-top:8px;font-size:14px;color:var(--muted)}
+.erg{text-align:center;min-width:96px;max-width:180px;overflow-wrap:anywhere;border-radius:12px;padding:8px 10px;background:var(--u-bg);color:var(--u)}
+.erg b{display:block;font-size:18px}
+.erg small{display:block;font-size:12px}
+.dossier{margin-top:28px;padding:12px 14px;border-radius:10px;background:var(--mod-bg)}
+.dossier a{color:var(--mod);font-weight:600}
+footer{margin-top:40px;font-size:12.5px;color:var(--muted);text-align:center}
+@media (max-width:560px){.sitzung{grid-template-columns:36px 1fr}.erg{grid-column:2;justify-self:start}.nr{width:36px;height:36px}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script id="daten" type="application/json">__SERIE_DATEN__</script>
+<script>
+(function(){
+  var d = JSON.parse(document.getElementById('daten').textContent);
+  var T = {
+    de:{reihe:'Gesprächsreihe',sitzungen:'Sitzungen',stimmen:'Stimmen',beitraege:'Beiträge',verlauf:'Verlauf des Urteils',alle:'Alle Sitzungen',next:'Nächster Schritt',dossier:'Gesammeltes Wissen der Reihe (Entscheidungen, offene Fragen, Quellen)',tiefe:'🔎 Tiefenmodus',footer:'Erstellt mit dem Skill multi-expert-panel. Alle Stimmen sind simuliert und ersetzen keine echte Fachberatung.'},
+    en:{reihe:'Discussion series',sitzungen:'sessions',stimmen:'voices',beitraege:'contributions',verlauf:'How the verdict developed',alle:'All sessions',next:'Next step',dossier:'Collected knowledge of the series (decisions, open questions, sources)',tiefe:'🔎 Deep mode',footer:'Made with the multi-expert-panel skill. All voices are simulated and do not replace professional advice.'},
+    ar:{reihe:'سلسلة جلسات',sitzungen:'جلسات',stimmen:'أصوات',beitraege:'مداخلات',verlauf:'تطوّر الحكم',alle:'كل الجلسات',next:'الخطوة التالية',dossier:'المعرفة المتراكمة للسلسلة (القرارات، الأسئلة المفتوحة، المصادر)',tiefe:'🔎 الوضع المعمّق',footer:'أُنشئ باستخدام مهارة multi-expert-panel. جميع الأصوات محاكاة ولا تغني عن استشارة متخصصة.'}
+  };
+  var sprache = String(d.sprache||'de').toLowerCase();
+  var L = {}, basis = T[sprache]||T.en, eigen = d.beschriftungen||{};
+  for (var k in T.en) L[k] = eigen[k]!==undefined ? eigen[k] : (basis[k]!==undefined ? basis[k] : T.en[k]);
+  document.documentElement.lang = sprache;
+  var RTL = ['ar','fa','ur','he','ps','ckb','ku','yi','dv','sd','ug'];
+  if (RTL.indexOf(sprache.split('-')[0])>=0) document.documentElement.dir = 'rtl';
+  document.title = d.name || L.reihe;
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function farbe(u){
+    u = String(u||'').toUpperCase().replace(/ـ/g,'').replace(/[ًٌٍَُِّْ]/g,'');
+    if(!u) return ['--mod','--mod-bg'];
+    return /NO[\s-]?GO|رفض|لا تبدأ/.test(u) ? ['--contra','--contra-bg']
+      : /AUFLAGEN|CONDITION|بشروط|بشرط|PILOT|تجربة/.test(u) ? ['--mittel','--neutral-bg']
+      : /\bGO\b|موافقة|ابدأ/.test(u) ? ['--pro','--pro-bg'] : ['--mod','--mod-bg'];
+  }
+  var S = d.sitzungen||[], app = document.getElementById('app');
+  var stimmen = S.reduce(function(a,s){return a+(s.teilnehmer||0);},0);
+  var h = '<header><p class="eyebrow">'+esc(L.reihe)+'</p><h1>'+esc(d.name)+'</h1><div class="meta"><span><b>'+S.length+'</b> '+esc(L.sitzungen)+'</span><span><b>'+stimmen+'</b> '+esc(L.stimmen)+'</span><span><b>'+S.reduce(function(a,s){return a+(s.beitraege||0);},0)+'</b> '+esc(L.beitraege)+'</span></div></header>';
+  h += '<h2>'+esc(L.verlauf)+'</h2><div class="verlauf">'+S.map(function(s,i){var f=farbe(s.urteil);return (i?'<span class="pfeil">'+(document.documentElement.dir==='rtl'?'←':'→')+'</span>':'')+'<span class="pill" style="--u:var('+f[0]+');--u-bg:var('+f[1]+')">'+esc(s.nummer)+' · '+esc([s.urteil,s.note].filter(Boolean).join(' '))+'</span>';}).join('')+'</div>';
+  h += '<h2>'+esc(L.alle)+'</h2><div class="liste">';
+  S.forEach(function(s){
+    var f = farbe(s.urteil);
+    h += '<a class="sitzung" href="'+esc(s.datei)+'"><div class="nr">'+esc(s.nummer)+'</div><div><h3>'+esc(s.thema)+'</h3><div class="klein">'+esc([s.datum, s.teilnehmer+' '+L.stimmen, s.beitraege+' '+L.beitraege].filter(Boolean).join(' · '))+(s.tiefenmodus?' · '+esc(L.tiefe):'')+'</div>'+(s.begruendung?'<p>'+esc(s.begruendung)+'</p>':'')+(s.naechster_schritt?'<div class="next"><b>'+esc(L.next)+':</b> '+esc(s.naechster_schritt)+'</div>':'')+'</div><div class="erg" style="--u:var('+f[0]+');--u-bg:var('+f[1]+')">'+(s.urteil?'<b>'+esc(s.urteil)+'</b>':'')+(s.note?'<small>'+esc(s.note)+'</small>':'')+'</div></a>';
+  });
+  h += '</div>';
+  if(d.dossier) h += '<div class="dossier">📒 <a href="'+esc(d.dossier)+'">'+esc(d.dossier)+'</a> · '+esc(L.dossier)+'</div>';
+  h += '<footer>'+esc(L.footer)+'</footer>';
+  app.innerHTML = h;
+})();
+</script>
+</body>
+</html>

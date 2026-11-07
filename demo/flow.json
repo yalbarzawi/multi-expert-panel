@@ -1,0 +1,542 @@
+{
+  "en": {
+    "dir": "ltr",
+    "ui": {
+      "hint": "↑↓ move · space select · enter submit",
+      "title": "Terminal · Claude Code",
+      "verdict": "Panel verdict"
+    },
+    "cmd": "/multi-expert-panel Evaluate: online shop for handmade ceramics, budget €5,000, part-time",
+    "think": [
+      "Decision mode · topic packs: business-idea + local-business",
+      "343 roles scanned → 14 fit this case"
+    ],
+    "questions": [
+      {
+        "h": "Experts",
+        "q": "Who should sit on the panel?",
+        "ticks": [
+          0,
+          1,
+          2
+        ],
+        "o": [
+          [
+            "E-commerce expert ⭐",
+            "margins, shipping, breakage"
+          ],
+          [
+            "Target customer ⭐",
+            "would I pay €45 for a mug?"
+          ],
+          [
+            "Numbers person ⭐",
+            "break-even with €5,000"
+          ],
+          [
+            "Tax adviser",
+            "small-business rules"
+          ]
+        ]
+      },
+      {
+        "h": "Perspectives",
+        "q": "Who else should challenge it?",
+        "ticks": [
+          0,
+          3
+        ],
+        "o": [
+          [
+            "Red team / Skeptic",
+            "pre-mortem: why did it fail?"
+          ],
+          [
+            "Etsy seller",
+            "marketplace vs own shop"
+          ],
+          [
+            "Your partner",
+            "evenings and weekends"
+          ],
+          [
+            "Researcher",
+            "real competitor prices"
+          ]
+        ]
+      },
+      {
+        "h": "Agenda",
+        "q": "Which points should the panel discuss?",
+        "ticks": [
+          0,
+          1,
+          3
+        ],
+        "o": [
+          [
+            "Demand & pricing",
+            ""
+          ],
+          [
+            "Numbers & break-even",
+            ""
+          ],
+          [
+            "Competition",
+            ""
+          ],
+          [
+            "Time & production",
+            ""
+          ]
+        ]
+      },
+      {
+        "h": "Style",
+        "q": "How do you want the result?",
+        "ticks": [
+          0,
+          3
+        ],
+        "o": [
+          [
+            "F · HTML discussion log ⭐",
+            "the full conversation as a page"
+          ],
+          [
+            "C · Round table",
+            "dialogue in the chat"
+          ],
+          [
+            "B · Compact",
+            "one screen"
+          ],
+          [
+            "🔎 Deep mode",
+            "experts review independently as agents"
+          ]
+        ]
+      }
+    ],
+    "agents_title": "🔎 Deep mode · 5 independent agents working in parallel",
+    "agents": [
+      [
+        "E-commerce expert",
+        "✓ 4 points · 2 sources"
+      ],
+      [
+        "Target customer",
+        "✓ 3 points"
+      ],
+      [
+        "Numbers person",
+        "✓ break-even calculated"
+      ],
+      [
+        "Researcher",
+        "✓ 9 shops compared · 6 sources"
+      ],
+      [
+        "Red team",
+        "✓ pre-mortem: 3 causes"
+      ]
+    ],
+    "debate": [
+      [
+        "contra",
+        "Red team",
+        "Assume it failed after 12 months: shipping breakage ate the margin."
+      ],
+      [
+        "pro",
+        "E-commerce expert",
+        "Then start on Etsy, where buyers already search for handmade."
+      ],
+      [
+        "neutral",
+        "Target customer",
+        "I'd pay €45 for a mug if I can see how it was made."
+      ],
+      [
+        "moderator",
+        "Moderator",
+        "Open question: can you make 30 pieces a month?"
+      ]
+    ],
+    "verdict": {
+      "urteil": "PILOT",
+      "note": "6/10",
+      "note_label": "chance of profit in 12 months",
+      "lines": [
+        "Key condition: you can produce 30 pieces a month without burning out.",
+        "Next step: Etsy shop with 10 pieces, track sales for 6 weeks."
+      ]
+    },
+    "saved": "✓ Saved panel_ceramics-shop_2026-11-07.html · 6 voices · 4 rounds · 8 sources"
+  },
+  "de": {
+    "dir": "ltr",
+    "ui": {
+      "hint": "↑↓ bewegen · Leertaste wählen · Enter senden",
+      "title": "Terminal · Claude Code",
+      "verdict": "Urteil des Panels"
+    },
+    "cmd": "/multi-expert-panel Evaluiere gründlich: neue Abteilung PV & Speicher für Gewerbekunden – 38 MA, Invest 180.000 €",
+    "think": [
+      "Entscheidungs-Modus · Themenpakete: company-expansion + business-idea",
+      "343 Rollen geprüft → 16 passen zu diesem Vorhaben"
+    ],
+    "questions": [
+      {
+        "h": "Experten",
+        "q": "Wer soll im Panel sitzen?",
+        "ticks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "o": [
+          [
+            "Branchenveteran (Solarteur) ⭐",
+            "was im Gewerbe-PV wirklich läuft"
+          ],
+          [
+            "Controllerin ⭐",
+            "Investition, Break-even"
+          ],
+          [
+            "Zielkunde: Spedition ⭐",
+            "kaufe ich das vom Elektriker?"
+          ],
+          [
+            "Wettbewerbsanalyst",
+            "wer bietet es in der Region an?"
+          ]
+        ]
+      },
+      {
+        "h": "Perspektiven",
+        "q": "Wer soll das Vorhaben außerdem prüfen?",
+        "ticks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "o": [
+          [
+            "Obermonteur im Kerngeschäft",
+            "wer macht die liegende Arbeit?"
+          ],
+          [
+            "Vertriebsleiter",
+            "welche Bestandskunden zuerst?"
+          ],
+          [
+            "Fördermittelberaterin",
+            "Kredit, Zuschüsse"
+          ],
+          [
+            "Red Team",
+            "Pre-Mortem nach 18 Monaten"
+          ]
+        ]
+      },
+      {
+        "h": "Punkte",
+        "q": "Worüber soll das Panel sprechen?",
+        "ticks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "o": [
+          [
+            "Kundennutzen und Nachfrage",
+            ""
+          ],
+          [
+            "Konkurrenz",
+            ""
+          ],
+          [
+            "Fachkräfte & Kerngeschäft",
+            ""
+          ],
+          [
+            "Kosten und Finanzierung",
+            ""
+          ]
+        ]
+      },
+      {
+        "h": "Stil",
+        "q": "Wie willst du das Ergebnis?",
+        "ticks": [
+          0,
+          3
+        ],
+        "o": [
+          [
+            "F · HTML-Gesprächsprotokoll ⭐",
+            "das ganze Gespräch als Seite"
+          ],
+          [
+            "E · Matrix",
+            "Kriterien × Stimmen"
+          ],
+          [
+            "B · Kompakt",
+            "ein Bildschirm"
+          ],
+          [
+            "🔎 Tiefenmodus",
+            "Experten prüfen unabhängig als Agenten"
+          ]
+        ]
+      }
+    ],
+    "agents_title": "🔎 Tiefenmodus · 5 unabhängige Agenten arbeiten parallel",
+    "agents": [
+      [
+        "Branchenveteran",
+        "✓ Gewerbe statt Privat"
+      ],
+      [
+        "Controllerin",
+        "✓ 1 Jahr Anlaufverlust"
+      ],
+      [
+        "Zielkunde Spedition",
+        "✓ kauft nur mit Referenz"
+      ],
+      [
+        "Wettbewerbsanalyst",
+        "✓ Umkreis 50 km verglichen"
+      ],
+      [
+        "Red Team",
+        "✓ Pre-Mortem: 3 Gründe"
+      ]
+    ],
+    "debate": [
+      [
+        "contra",
+        "Obermonteur",
+        "Wir haben schon 6 Wochen Vorlauf. Wer geht aufs Dach, wenn die Besten fehlen?"
+      ],
+      [
+        "pro",
+        "Vertriebsleiter",
+        "Wir sind schon in den Hallen: 60 Gewerbe-Bestandskunden, keine Kaltakquise."
+      ],
+      [
+        "neutral",
+        "Zielkunde",
+        "Zeigt mir eine Anlage mit echten Ertragsdaten, dann bin ich dabei."
+      ],
+      [
+        "moderator",
+        "Moderatorin",
+        "Offen bleibt die Fachkräftefrage. Also: ja, aber in Stufen."
+      ]
+    ],
+    "verdict": {
+      "urteil": "GO MIT AUFLAGEN",
+      "note": "6/10",
+      "note_label": "Erfolgsaussicht in 24 Monaten",
+      "lines": [
+        "Wichtigste Bedingung: Projektleiter PV eingestellt, bevor Stufe 2 startet.",
+        "Nächster Schritt: 3 Stammkunden mit hohem Tagverbrauch für eine Ertragsanalyse ansprechen."
+      ]
+    },
+    "saved": "✓ Gespeichert: panel_pv-abteilung_2026-11-07.html · 10 Stimmen · 4 Runden · 21 Beiträge"
+  },
+  "ar": {
+    "dir": "rtl",
+    "ui": {
+      "hint": "↑↓ تنقّل · مسافة للاختيار · Enter للإرسال",
+      "title": "Terminal · Claude Code",
+      "verdict": "حكم اللجنة"
+    },
+    "cmd": "/multi-expert-panel قيّم بعمق: فكرة Host your Logo – منصة استضافة الشعارات مع API وسجل تغييرات",
+    "think": [
+      "وضع القرار · حزم المواضيع: business-idea + tech-project",
+      "فحص 343 دوراً ← 18 دوراً مناسباً لهذه الفكرة"
+    ],
+    "questions": [
+      {
+        "h": "الخبراء",
+        "q": "من يجلس في اللجنة؟",
+        "ticks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "o": [
+          [
+            "خبير مخضرم في سوق Brand/DAM ⭐",
+            "لماذا تفشل الأدوات الصغيرة؟"
+          ],
+          [
+            "رجل الأرقام ⭐",
+            "التكاليف ونقطة التعادل"
+          ],
+          [
+            "العميلة المستهدفة: وكالة ⭐",
+            "هل أدفع لهذا؟"
+          ],
+          [
+            "مهندس برمجيات",
+            "API وCDN وتوليد الصيغ"
+          ]
+        ]
+      },
+      {
+        "h": "وجهات نظر",
+        "q": "من أيضاً يتحدى الفكرة؟",
+        "ticks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "o": [
+          [
+            "المتشكك / الفريق الأحمر",
+            "Pre-Mortem: لماذا فشلت؟"
+          ],
+          [
+            "منافس قائم (Logo API)",
+            "كيف سأرد؟"
+          ],
+          [
+            "محامية قانون تقنية المعلومات",
+            "حقوق العلامات والتصيّد"
+          ],
+          [
+            "مستشار تمويل",
+            "دعم حكومي؟ قروض؟"
+          ]
+        ]
+      },
+      {
+        "h": "النقاط",
+        "q": "ما نقاط النقاش الأساسية؟",
+        "ticks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "o": [
+          [
+            "التمويل",
+            ""
+          ],
+          [
+            "المنافسون",
+            ""
+          ],
+          [
+            "الواقع الحالي",
+            ""
+          ],
+          [
+            "الحاجة والفئات المستهدفة",
+            ""
+          ]
+        ]
+      },
+      {
+        "h": "الأسلوب",
+        "q": "كيف تريد النتيجة؟",
+        "ticks": [
+          0,
+          3
+        ],
+        "o": [
+          [
+            "F · محضر نقاش HTML ⭐",
+            "الحوار كاملاً كصفحة"
+          ],
+          [
+            "C · جلسة نقاش",
+            "حوار داخل المحادثة"
+          ],
+          [
+            "B · مختصر",
+            "شاشة واحدة"
+          ],
+          [
+            "🔎 الوضع المعمّق",
+            "الخبراء يقيّمون باستقلال كوكلاء"
+          ]
+        ]
+      }
+    ],
+    "agents_title": "🔎 الوضع المعمّق · 6 وكلاء مستقلين يعملون بالتوازي",
+    "agents": [
+      [
+        "خبير سوق Brand/DAM",
+        "✓ 4 نقاط"
+      ],
+      [
+        "محللة المنتجات الشبيهة",
+        "✓ 7 منافسين · 5 مصادر"
+      ],
+      [
+        "رجل الأرقام",
+        "✓ حُسبت نقطة التعادل"
+      ],
+      [
+        "مستشار التمويل",
+        "✓ Gründungszuschuss · مصدران"
+      ],
+      [
+        "العميلة المستهدفة",
+        "✓ تدفع للرابط المحدَّث فقط"
+      ],
+      [
+        "الفريق الأحمر",
+        "✓ Pre-Mortem: 3 أسباب"
+      ]
+    ],
+    "debate": [
+      [
+        "contra",
+        "الفريق الأحمر",
+        "لنفترض أنها فشلت بعد 12 شهراً: الحاجة تحدث مرة واحدة لكل عميل."
+      ],
+      [
+        "pro",
+        "خبيرة العلامات",
+        "لكن «الرابط الرسمي الذي يتحدّث تلقائياً» غير موجود بهذا الشكل."
+      ],
+      [
+        "neutral",
+        "العميلة المستهدفة",
+        "أدفع مقابل جمع شعارات الرعاة، لا مقابل Favicons."
+      ],
+      [
+        "moderator",
+        "مدير الجلسة",
+        "النقطة المفتوحة: هل تدفع الوكالات فعلاً؟"
+      ]
+    ],
+    "verdict": {
+      "urteil": "PILOT",
+      "note": "5/10",
+      "note_label": "فرص النجاح خلال 12 شهراً",
+      "lines": [
+        "الشرط الأهم: أن تدفع الوكالات مقابل الرابط الذي يتحدّث تلقائياً.",
+        "الخطوة التالية: تجربة 6 أسابيع مع 10 وكالات و5 منظمي فعاليات، والنجاح = 3 عملاء يدفعون."
+      ]
+    },
+    "saved": "✓ حُفظ panel_host-your-logo_2026-11-07.html · 12 صوتاً · 6 جولات · 38 مداخلة"
+  }
+}

@@ -1,0 +1,1 @@
+Icons from [Phosphor Icons](https://phosphoricons.com) 2.1.1 (fill weight), MIT License, Copyright (c) 2023 Phosphor Icons. Recolored with tones of the HTML protocol palette, chosen for at least 3:1 contrast on light and dark GitHub backgrounds.

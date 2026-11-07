@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Experten-Panel</title>
+<style>
+:root{
+  --bg:#f6f5f1; --card:#ffffff; --ink:#1d1c1a; --muted:#6b6862; --line:#e4e1da;
+  --pro:#2f7d55; --pro-bg:#e8f3ec; --contra:#b4442f; --contra-bg:#f8e9e5;
+  --neutral:#5a6472; --neutral-bg:#eceff3; --mod:#3d4f9f; --mod-bg:#eaedf8;
+  --krit:#b4442f; --mittel:#b7791f; --klein:#5a6472;
+  --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.05),0 4px 16px rgba(0,0,0,.04);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#161614; --card:#1f1f1c; --ink:#ecebe7; --muted:#a19d95; --line:#33322e;
+    --pro:#6cc595; --pro-bg:#1d2c23; --contra:#ec8b76; --contra-bg:#331f1a;
+    --neutral:#a6b0bd; --neutral-bg:#252a30; --mod:#9aa8ec; --mod-bg:#22263a;
+    --krit:#ec8b76; --mittel:#e3b062; --klein:#a6b0bd; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#161614; --card:#1f1f1c; --ink:#ecebe7; --muted:#a19d95; --line:#33322e;
+  --pro:#6cc595; --pro-bg:#1d2c23; --contra:#ec8b76; --contra-bg:#331f1a;
+  --neutral:#a6b0bd; --neutral-bg:#252a30; --mod:#9aa8ec; --mod-bg:#22263a;
+  --krit:#ec8b76; --mittel:#e3b062; --klein:#a6b0bd; --shadow:none;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:40px 16px 80px}
+header{margin-bottom:32px}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+h1{font-size:30px;line-height:1.2;margin:0 0 12px;letter-spacing:-.01em}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;color:var(--muted);font-size:14px}
+.meta b{color:var(--ink);font-weight:600}
+h2{font-size:18px;margin:40px 0 14px;display:flex;align-items:center;gap:10px}
+h2 .count{font-size:13px;font-weight:500;color:var(--muted)}
+.gegenstand{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;white-space:pre-wrap;font-size:14.5px;color:var(--muted);max-height:260px;overflow:auto}
+.panel{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.person{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow);border-top:4px solid var(--c)}
+.person .kopf{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.avatar{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;background:var(--cbg);color:var(--c)}
+.person .name{font-weight:650;line-height:1.25}
+.person .rolle{font-size:13px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.tag{font-size:12px;padding:2px 8px;border-radius:99px;background:var(--neutral-bg);color:var(--neutral)}
+.tag.seite{background:var(--cbg);color:var(--c);font-weight:600}
+.person .fokus{font-size:13.5px;color:var(--muted);margin:0}
+.person .quellen{margin-top:6px;font-size:12.5px}
+.person .quellen a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.chat{display:flex;flex-direction:column;gap:14px}
+.msg{display:flex;gap:10px;max-width:88%}
+.msg.links{align-self:flex-start}
+.msg.rechts{align-self:flex-end;flex-direction:row-reverse}
+.msg.mitte{align-self:center;max-width:94%}
+.blase{background:var(--card);border:1px solid var(--line);border-inline-start:4px solid var(--c);border-radius:var(--radius);padding:10px 14px;box-shadow:var(--shadow)}
+.msg.rechts .blase{border-inline-start:1px solid var(--line);border-inline-end:4px solid var(--c)}
+.msg.mitte .blase{background:var(--mod-bg);border-color:transparent;border-inline-start:4px solid var(--mod)}
+.blase .wer{font-size:13px;font-weight:650;color:var(--c);margin-bottom:2px}
+.blase .wer span{font-weight:400;color:var(--muted)}
+.blase p{margin:0}
+.blase blockquote{margin:8px 0 0;padding:6px 10px;border-inline-start:3px solid var(--line);color:var(--muted);font-size:14px;font-style:italic}
+.runde{align-self:center;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+.fazit{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow);border-top:4px solid var(--mod)}
+.fazit h3{font-size:15px;margin:22px 0 10px;color:var(--mod)}
+.fazit h3:first-child{margin-top:0}
+.ergebnis{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:6px}
+.badge{border-radius:12px;padding:10px 16px;background:var(--mod-bg);color:var(--mod)}
+.badge .gross{font-size:26px;font-weight:750;line-height:1.1}
+.badge .klein{font-size:12.5px}
+.badge.urteil{background:var(--u-bg,var(--mod-bg));color:var(--u,var(--mod))}
+ul.krit{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+ul.krit li{display:flex;gap:10px;align-items:baseline}
+.gew{flex:none;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 8px;border-radius:99px;color:#fff}
+.gew.kritisch{background:var(--krit)}.gew.mittel{background:var(--mittel)}.gew.klein{background:var(--klein)}
+.von{font-size:12.5px;color:var(--muted)}
+ol.verb{padding-inline-start:20px;margin:0;display:flex;flex-direction:column;gap:14px}
+ol.verb .vn{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+ol.verb .vn div{font-size:14px;border-radius:10px;padding:8px 10px}
+.vorher{background:var(--contra-bg)}.nachher{background:var(--pro-bg)}
+.vn small{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:2px}
+.naechster{margin-top:20px;padding:12px 14px;border-radius:10px;background:var(--mod-bg)}
+.serie-nav{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;font-size:14px;margin:0 0 22px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.serie-nav a{color:var(--mod);text-decoration:none;font-weight:600}
+.serie-nav .aus{color:var(--muted);font-weight:400}
+.rueckblick{background:var(--mod-bg);border-radius:var(--radius);padding:14px 18px;margin:0 0 8px}
+.rueckblick h3{margin:0 0 6px;font-size:15px;color:var(--mod)}
+.rueckblick ul{margin:0;padding-inline-start:20px}
+.hinweis{font-size:13px;color:var(--muted);margin-top:16px}
+footer{margin-top:40px;font-size:12.5px;color:var(--muted);text-align:center}
+@media (max-width:600px){h1{font-size:24px}.msg{max-width:100%}ol.verb .vn{grid-template-columns:1fr}}
+@media print{body{background:#fff}.msg,.person,.fazit{break-inside:avoid;box-shadow:none}.gegenstand{max-height:none}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script id="daten" type="application/json">
+__PANEL_DATEN__
+</script>
+<script>
+(function(){
+  var d = JSON.parse(document.getElementById('daten').textContent);
+  var app = document.getElementById('app');
+  var farben = {pro:['--pro','--pro-bg'],contra:['--contra','--contra-bg'],neutral:['--neutral','--neutral-bg'],moderator:['--mod','--mod-bg']};
+  var T = {
+    de:{sitzung:'Sitzung',reihe:'Gesprächsreihe',uebersicht:'Übersicht',rueckblick:'Was wir aus den bisherigen Sitzungen wissen',vertiefen:'Vorschläge für die nächste Sitzung',unabh:'🔎 unabhängig geprüft',tiefe:'Tiefenmodus',quellen:'Quellen',modi:{Analyse:'Analyse',Entscheidung:'Entscheidung'},kat:{'Fachexperte':'Fachexperte','Hierarchie':'Hierarchie','Persönlichkeitstyp':'Persönlichkeitstyp','Betroffener':'Betroffener','Feste Rolle':'Feste Rolle'},panel:'Experten-Panel',ziel:'Ziel',stil:'Stil',was:'Was geprüft wird',wer:'Wer am Tisch sitzt',personen:'Personen',gespraech:'Das Gespräch',beitraege:'Beiträge',fazit:'Fazit',urteil:'Urteil des Panels',note:'Gesamtnote',krit:'Kritikpunkte aller Teilnehmer',verb:'Konkrete Verbesserungen',vorher:'Vorher',nachher:'Nachher',bed:'Wichtigste Bedingung',next:'Nächster Schritt',q:['„','“'],seite:{pro:'dafür',contra:'dagegen',neutral:'neutral',moderator:'Moderation'},gew:{kritisch:'kritisch',mittel:'mittel',klein:'klein'},footer:'Erstellt mit dem Skill multi-expert-panel. Alle Stimmen sind simuliert und ersetzen keine echte Fachberatung.'},
+    en:{sitzung:'Session',reihe:'Discussion series',uebersicht:'Overview',rueckblick:'What we know from earlier sessions',vertiefen:'Suggested topics for the next session',unabh:'🔎 independent review',tiefe:'Deep mode',quellen:'Sources',modi:{Analyse:'Analysis',Entscheidung:'Decision'},kat:{'Fachexperte':'Expert','Hierarchie':'Hierarchy','Persönlichkeitstyp':'Personality','Betroffener':'Affected','Feste Rolle':'Fixed role'},panel:'Expert Panel',ziel:'Goal',stil:'Style',was:'What is reviewed',wer:'Who is at the table',personen:'people',gespraech:'The discussion',beitraege:'contributions',fazit:'Summary',urteil:'Panel verdict',note:'Overall score',krit:'Issues raised by the panel',verb:'Concrete improvements',vorher:'Before',nachher:'After',bed:'Key condition',next:'Next step',q:['“','”'],seite:{pro:'for',contra:'against',neutral:'neutral',moderator:'moderation'},gew:{kritisch:'critical',mittel:'medium',klein:'minor'},footer:'Made with the multi-expert-panel skill. All voices are simulated and do not replace professional advice.'},
+    ar:{sitzung:'الجلسة',reihe:'سلسلة جلسات',uebersicht:'نظرة عامة',rueckblick:'ما نعرفه من الجلسات السابقة',vertiefen:'مقترحات للجلسة التالية',unabh:'🔎 رأي مستقل',tiefe:'الوضع المعمّق',quellen:'المصادر',modi:{Analyse:'تحليل',Entscheidung:'قرار'},kat:{'Fachexperte':'خبير','Hierarchie':'هرم الفريق','Persönlichkeitstyp':'نمط شخصية','Betroffener':'متأثر','Feste Rolle':'دور ثابت'},panel:'لجنة الخبراء',ziel:'الهدف',stil:'الأسلوب',was:'موضوع التقييم',wer:'أعضاء اللجنة',personen:'أشخاص',gespraech:'النقاش',beitraege:'مداخلات',fazit:'الخلاصة',urteil:'حكم اللجنة',note:'التقييم العام',krit:'نقاط النقد',verb:'تحسينات ملموسة',vorher:'قبل',nachher:'بعد',bed:'الشرط الأهم',next:'الخطوة التالية',q:['«','»'],seite:{pro:'مؤيد',contra:'معارض',neutral:'محايد',moderator:'إدارة الجلسة'},gew:{kritisch:'حرج',mittel:'متوسط',klein:'بسيط'},footer:'أُنشئ باستخدام مهارة multi-expert-panel. جميع الأصوات محاكاة ولا تغني عن استشارة متخصصة.'}
+  };
+  // Jede Sprache: eingebaute Beschriftungen (de/en/ar), sonst Englisch als Basis,
+  // überschrieben von d.beschriftungen (vom Modell in der Sprache des Nutzers geliefert).
+  var sprache = String(d.sprache||'de').toLowerCase();
+  var basis = T[sprache]||T.en, eigen = d.beschriftungen||{};
+  var L = {};
+  for (var k in T.en) L[k] = basis[k]!==undefined ? basis[k] : T.en[k];
+  for (var k2 in eigen) {
+    if (eigen[k2] && typeof eigen[k2]==='object' && !Array.isArray(eigen[k2])) {
+      var z = {}; for (var a in L[k2]) z[a]=L[k2][a]; for (var b in eigen[k2]) z[b]=eigen[k2][b]; L[k2]=z;
+    } else L[k2] = eigen[k2];
+  }
+  document.documentElement.lang = sprache;
+  var RTL = ['ar','fa','ur','he','ps','ckb','ku','yi','dv','sd','ug'];
+  if (RTL.indexOf(sprache.split('-')[0])>=0 || d.richtung==='rtl') document.documentElement.dir = 'rtl';
+  var seiteText = L.seite;
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function el(html){var t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstChild;}
+  function kuerzel(n){return esc(String(n||'?').split(/\s+/).map(function(w){return w[0];}).join('').slice(0,2).toUpperCase());}
+  function vars(seite){var f=farben[seite]||farben.neutral;return '--c:var('+f[0]+');--cbg:var('+f[1]+')';}
+  var personen = {};
+  (d.teilnehmer||[]).forEach(function(p){personen[p.id]=p;});
+  document.title = d.titel || L.panel;
+
+  var S = d.serie||null, SL = (S&&S.links)||{};
+  if(S){
+    var rtl = document.documentElement.dir==='rtl', pz = rtl?'→ ':'← ', pw = rtl?' ←':' →';
+    var nav = '<nav class="serie-nav">';
+    nav += SL.zurueck ? '<a href="'+esc(SL.zurueck)+'">'+pz+esc(L.sitzung)+' '+(S.nummer-1)+'</a>' : '<span class="aus">'+esc(L.reihe)+'</span>';
+    nav += '<a href="'+esc(SL.index||'index.html')+'">'+esc(L.uebersicht)+': '+esc(S.name||'')+'</a>';
+    nav += SL.weiter ? '<a href="'+esc(SL.weiter)+'">'+esc(L.sitzung)+' '+(S.nummer+1)+pw+'</a>' : '<span></span>';
+    app.appendChild(el(nav+'</nav>'));
+  }
+  var h = '<header><p class="eyebrow">'+(S?esc(L.sitzung)+' '+esc(S.nummer)+' · ':'')+L.panel+' · '+esc((L.modi||{})[d.modus||'Analyse']||d.modus||'Analyse')+'</p><h1>'+esc(d.titel)+'</h1><div class="meta">';
+  if(d.ziel) h += '<span>'+L.ziel+': <b>'+esc(d.ziel)+'</b></span>';
+  if(d.stil) h += '<span>'+L.stil+': <b>'+esc(d.stil)+'</b></span>';
+  if(d.datum) h += '<span>'+esc(d.datum)+'</span>';
+  var nUnabh = (d.teilnehmer||[]).filter(function(p){return p.unabhaengig;}).length;
+  if(d.tiefenmodus || nUnabh) h += '<span>'+esc(L.tiefe)+(nUnabh?': <b>'+nUnabh+' × '+esc(L.unabh.replace(/^\S+\s/,''))+'</b>':'')+'</span>';
+  h += '</div></header>';
+  app.appendChild(el('<div>'+h+'</div>'));
+
+  if(S && (S.rueckblick||[]).length){
+    app.appendChild(el('<div class="rueckblick"><h3>'+esc(L.rueckblick)+'</h3><ul>'+S.rueckblick.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul></div>'));
+  }
+  if(d.gegenstand){
+    app.appendChild(el('<h2>'+L.was+'</h2>'));
+    app.appendChild(el('<div class="gegenstand">'+esc(d.gegenstand)+'</div>'));
+  }
+
+  app.appendChild(el('<h2>'+L.wer+' <span class="count">'+(d.teilnehmer||[]).length+' '+L.personen+'</span></h2>'));
+  var panel = el('<div class="panel"></div>');
+  (d.teilnehmer||[]).forEach(function(p){
+    var s = p.seite||'neutral';
+    var tags = '<span class="tag seite">'+esc(seiteText[s]||s)+'</span>';
+    if(p.kategorie) tags += '<span class="tag">'+esc((L.kat||{})[p.kategorie]||p.kategorie)+'</span>';
+    if(p.typ) tags += '<span class="tag">'+esc(p.typ)+'</span>';
+    if(p.hierarchie) tags += '<span class="tag">'+esc(p.hierarchie)+'</span>';
+    if(p.unabhaengig) tags += '<span class="tag seite">'+esc(L.unabh)+'</span>';
+    var ql = (p.quellen||[]).filter(function(q){return q&&/^https?:\/\//i.test(q.url||'');});
+    var qh = ql.length ? '<p class="fokus quellen">'+esc(L.quellen)+': '+ql.map(function(q){return '<a href="'+esc(q.url)+'" target="_blank" rel="noopener noreferrer">'+esc(q.titel||q.url)+'</a>';}).join(' · ')+'</p>' : '';
+    panel.appendChild(el('<div class="person" style="'+vars(s)+'"><div class="kopf"><div class="avatar">'+kuerzel(p.name||p.rolle)+'</div><div><div class="name">'+esc(p.name||p.rolle)+'</div>'+(p.name?'<div class="rolle">'+esc(p.rolle)+'</div>':'')+'</div></div><div class="tags">'+tags+'</div>'+(p.fokus?'<p class="fokus">'+esc(p.fokus)+'</p>':'')+qh+'</div>'));
+  });
+  app.appendChild(panel);
+
+  app.appendChild(el('<h2>'+L.gespraech+' <span class="count">'+(d.gespraech||[]).filter(function(m){return m.von;}).length+' '+L.beitraege+'</span></h2>'));
+  var chat = el('<div class="chat"></div>');
+  (d.gespraech||[]).forEach(function(m){
+    if(m.runde){chat.appendChild(el('<div class="runde">'+esc(m.runde)+'</div>'));return;}
+    var p = personen[m.von]||{rolle:m.von,seite:'neutral'};
+    var s = p.seite||'neutral';
+    var pos = s==='moderator'?'mitte':(s==='pro'?'rechts':'links');
+    var text = esc(m.text).split(/\n\n+/).map(function(x){return '<p>'+x.replace(/\n/g,'<br>')+'</p>';}).join('');
+    var z = m.zitat?'<blockquote>'+L.q[0]+esc(m.zitat)+L.q[1]+'</blockquote>':'';
+    chat.appendChild(el('<div class="msg '+pos+'" style="'+vars(s)+'"><div class="avatar">'+kuerzel(p.name||p.rolle)+'</div><div class="blase"><div class="wer">'+esc(p.name||p.rolle)+(p.name?' <span>· '+esc(p.rolle)+'</span>':'')+'</div>'+text+z+'</div></div>'));
+  });
+  app.appendChild(chat);
+
+  var f = d.fazit||{};
+  var mod = (d.teilnehmer||[]).filter(function(p){return p.seite==='moderator';})[0];
+  app.appendChild(el('<h2>'+L.fazit+' <span class="count">'+esc(mod&&mod.name?mod.name+' · '+mod.rolle:(mod?mod.rolle:'Moderator'))+'</span></h2>'));
+  var fz = '<div class="fazit"><div class="ergebnis">';
+  if(f.urteil){
+    // Urteil in jeder Sprache erkennen (de/en/ar), auch mit Zusatz wie „PILOT · تجربة مصغّرة“.
+    // Reihenfolge zählt: NO-GO und „mit Auflagen“ vor dem einfachen GO prüfen.
+    var u = String(f.urteil).toUpperCase().replace(/ـ/g,'').replace(/[ًٌٍَُِّْ]/g,'');
+    var uf = /NO[\s-]?GO|رفض|لا تبدأ/.test(u) ? ['--contra','--contra-bg']
+      : /AUFLAGEN|CONDITION|بشروط|بشرط/.test(u) ? ['--mittel','--neutral-bg']
+      : /PILOT|تجربة/.test(u) ? ['--mittel','--neutral-bg']
+      : /\bGO\b|موافقة|ابدأ/.test(u) ? ['--pro','--pro-bg']
+      : ['--mod','--mod-bg'];
+    fz += '<div class="badge urteil" style="--u:var('+uf[0]+');--u-bg:var('+uf[1]+')"><div class="gross">'+esc(f.urteil)+'</div><div class="klein">'+L.urteil+'</div></div>';
+  }
+  if(f.note) fz += '<div class="badge"><div class="gross">'+esc(f.note)+'</div><div class="klein">'+esc(f.note_fuer||L.note)+'</div></div>';
+  fz += '</div>';
+  if(f.begruendung) fz += '<p>'+esc(f.begruendung)+'</p>';
+  if((f.kritikpunkte||[]).length){
+    fz += '<h3>'+L.krit+'</h3><ul class="krit">';
+    f.kritikpunkte.forEach(function(k){
+      var g = k.gewicht||'mittel';
+      var von = (k.von||[]).map(function(id){var p=personen[id];return esc(p?(p.name||p.rolle):id);}).join(', ');
+      fz += '<li><span class="gew '+esc(g)+'">'+esc(L.gew[g]||g)+'</span><span>'+esc(k.text)+(von?' <span class="von">('+von+')</span>':'')+'</span></li>';
+    });
+    fz += '</ul>';
+  }
+  if((f.verbesserungen||[]).length){
+    fz += '<h3>'+L.verb+'</h3><ol class="verb">';
+    f.verbesserungen.forEach(function(v){
+      fz += '<li><b>'+esc(v.was)+'</b>';
+      if(v.warum) fz += '<div class="von">'+esc(v.warum)+'</div>';
+      if(v.vorher||v.nachher) fz += '<div class="vn">'+(v.vorher?'<div class="vorher"><small>'+L.vorher+'</small>'+esc(v.vorher)+'</div>':'<div></div>')+(v.nachher?'<div class="nachher"><small>'+L.nachher+'</small>'+esc(v.nachher)+'</div>':'')+'</div>';
+      fz += '</li>';
+    });
+    fz += '</ol>';
+  }
+  if(f.wichtigste_bedingung) fz += '<div class="naechster"><b>'+L.bed+':</b> '+esc(f.wichtigste_bedingung)+'</div>';
+  if(f.naechster_schritt) fz += '<div class="naechster"><b>'+L.next+':</b> '+esc(f.naechster_schritt)+'</div>';
+  if((f.naechste_sitzung||[]).length) fz += '<h3>'+esc(L.vertiefen)+'</h3><ul>'+f.naechste_sitzung.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>';
+  if(f.hinweis) fz += '<p class="hinweis">'+esc(f.hinweis)+'</p>';
+  fz += '</div>';
+  app.appendChild(el(fz));
+  app.appendChild(el('<footer>'+esc(L.footer)+'</footer>'));
+})();
+</script>
+</body>
+</html>

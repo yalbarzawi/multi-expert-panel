@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+dist/
+.DS_Store
+# eigene Testläufe, nicht ins Repo
+panel_*/
+*-workspace/

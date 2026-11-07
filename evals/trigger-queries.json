@@ -1,0 +1,20 @@
+[
+{"q":"Analyze: my landing page headline 'We build websites' – goal: more demo bookings","t":true},
+{"q":"Evaluiere: Ich will nebenberuflich einen Etsy-Shop für Holzspielzeug starten, Budget 3.000 €","t":true},
+{"q":"قيّم: أريد فتح مقهى صغير في حيّنا بميزانية 40 ألف يورو","t":true},
+{"q":"Should I quit my job to build a SaaS for dentists? Give me a go or no-go from different expert perspectives.","t":true},
+{"q":"Kannst du mein Anschreiben aus mehreren Perspektiven kritisch prüfen, also wie ein Recruiter und wie die Fachabteilung? 'Hiermit bewerbe ich mich als Projektmanager. Ich bin teamfähig und belastbar.'","t":true},
+{"q":"Stress-test my business plan: subscription box for vegan snacks, 200 customers in year one, 25 EUR per box. Be brutally honest and tell me where it fails.","t":true},
+{"q":"حلّل هذه الجملة من سيرتي الذاتية: 'أنا شخص مجتهد وأحب العمل الجماعي' الهدف: وظيفة مطور ويب","t":true},
+{"q":"Hol mir einen Steuerberater und einen Gründungsberater dazu: Lohnt sich eine GmbH für meinen Ein-Mann-Webdesign-Betrieb mit 60.000 € Umsatz?","t":true},
+{"q":"I want an advisory board to tear apart my pitch outline before the investor meeting: problem, solution, 2B market, asking 500k for 10%.","t":true},
+{"q":"ممكن لجنة خبراء تقيّم فكرة تطبيق لتوصيل الطعام المنزلي من عدة زوايا؟","t":true},
+{"q":"Fix the TypeError in this Python function: def f(x): return x + '1'  when called with f(2)","t":false},
+{"q":"Analysiere die Datei sales.csv und berechne den Umsatz pro Monat","t":false},
+{"q":"Translate into Arabic: The meeting is moved to 3pm tomorrow.","t":false},
+{"q":"Schreib mir ein Anschreiben für eine Stelle als Buchhalterin bei einer Steuerkanzlei","t":false},
+{"q":"Research the market size of the European e-bike industry in 2025 with sources","t":false},
+{"q":"Review this diff for bugs: - if (a = b) { + if (a == b) {","t":false},
+{"q":"لخّص لي في ثلاث جمل: الذكاء الاصطناعي يغير طريقة عمل الشركات في كل القطاعات","t":false},
+{"q":"Wie formatiere ich ein Datum in PHP als TT.MM.JJJJ?","t":false}
+]

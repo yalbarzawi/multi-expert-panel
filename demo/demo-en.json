@@ -1,0 +1,45 @@
+{
+ "titel": "Online shop for handmade ceramics",
+ "modus": "Entscheidung",
+ "ziel": "Is it worth starting part-time with €5,000?",
+ "stil": "HTML discussion log",
+ "datum": "2026-11-07",
+ "sprache": "en",
+ "gegenstand": "I want to sell my handmade mugs and bowls online. Budget €5,000, 6 months, part-time next to my job.",
+ "teilnehmer": [
+  {"id": "moderator", "rolle": "Moderator", "seite": "moderator", "kategorie": "Feste Rolle", "fokus": "Opens, listens, gives the verdict"},
+  {"id": "ecom", "rolle": "E-commerce expert", "name": "Lena", "seite": "pro", "kategorie": "Fachexperte", "typ": "Optimist", "fokus": "Shop, shipping, returns"},
+  {"id": "zahlen", "rolle": "Numbers person", "name": "Sam", "seite": "neutral", "kategorie": "Persönlichkeitstyp", "fokus": "Margins, break-even"},
+  {"id": "kunde", "rolle": "Target customer", "name": "Mia", "seite": "neutral", "kategorie": "Betroffener", "fokus": "Would I buy this?"},
+  {"id": "red", "rolle": "Red team", "name": "Karl", "seite": "contra", "kategorie": "Persönlichkeitstyp", "typ": "Skeptic", "fokus": "Pre-mortem: why did it fail?"},
+  {"id": "beobachter", "rolle": "Observer", "seite": "neutral", "kategorie": "Feste Rolle", "fokus": "What is everyone missing?"}
+ ],
+ "gespraech": [
+  {"runde": "Round 1 · Demand"},
+  {"von": "moderator", "text": "Handmade ceramics, €5,000, part-time. Mia, would you buy?"},
+  {"von": "kunde", "text": "Yes, if I see the mug in real daylight and know who made it. €35 is fine, €12 shipping is not."},
+  {"von": "ecom", "text": "That is the strength: a story and a face. Instagram plus Etsy first, own shop later."},
+  {"runde": "Round 2 · Numbers"},
+  {"von": "zahlen", "text": "Material, kiln, packaging, Etsy fees: about €14 per mug. At €35 you keep €21. 30 mugs a month covers costs, it is not a salary.", "zitat": "Budget €5,000"},
+  {"von": "red", "text": "Assume it failed after 12 months. Breakage in shipping ate the margin, and you burned out making 30 mugs a month next to your job."},
+  {"von": "ecom", "text": "Breakage is solvable with tested packaging. Burnout is the real risk, I agree."},
+  {"von": "beobachter", "text": "Nobody asked about the kiln: can you even produce 30 a month at home, and is it allowed in your flat?"}
+ ],
+ "fazit": {
+  "urteil": "PILOT",
+  "note": "6/10",
+  "note_fuer": "Chance of a profitable side business in 12 months",
+  "begruendung": "Real demand for handmade pieces with a story, but thin margins and limited production time.",
+  "kritikpunkte": [
+   {"gewicht": "kritisch", "text": "Production capacity and kiln at home are unclear", "von": ["beobachter"]},
+   {"gewicht": "mittel", "text": "Shipping cost and breakage can eat the margin", "von": ["kunde", "red"]},
+   {"gewicht": "klein", "text": "Own shop too early; marketplaces first", "von": ["ecom"]}
+  ],
+  "verbesserungen": [
+   {"was": "Test before investing", "nachher": "Sell 20 pieces on Etsy within 6 weeks before spending more than €500."},
+   {"was": "Packaging test", "nachher": "Ship 5 test parcels to friends and count the breakage."}
+  ],
+  "wichtigste_bedingung": "You can produce 30 pieces a month without burning out.",
+  "naechster_schritt": "Open an Etsy shop with 10 pieces and track sales for 6 weeks."
+ }
+}

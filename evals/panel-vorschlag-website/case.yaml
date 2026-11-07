@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: panel-vorschlag-website
+expected_outcome: |
+  Ohne Panel- und Stilangabe schlägt der Skill zuerst ein Panel vor und lässt den Nutzer wählen, statt sofort zu bewerten.
