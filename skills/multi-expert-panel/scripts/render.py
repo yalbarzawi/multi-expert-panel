@@ -13,6 +13,7 @@ bekommen Vor/Zurück-Links und ORDNER/index.html wird neu gebaut
 """
 import json
 import re
+import unicodedata
 import sys
 from pathlib import Path
 
@@ -78,7 +79,11 @@ def einbetten(vorlage, platzhalter, daten):
 
 
 def kurzname(text):
-    t = re.sub(r"[^a-z0-9]+", "-", str(text).lower()).strip("-")
+    t = str(text).lower()
+    for a, b in (("ä", "ae"), ("ö", "oe"), ("ü", "ue"), ("ß", "ss")):
+        t = t.replace(a, b)
+    t = unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode()
+    t = re.sub(r"[^a-z0-9]+", "-", t).strip("-")
     return t[:40].strip("-") or "thema"
 
 
