@@ -4,6 +4,9 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+### Fixed
+- `render.py`: German umlauts and accents in session titles are now transliterated in file names (`Überblick` → `ueberblick`) instead of being dropped.
+
 ## [1.0.0] - 2026-11-07
 
 First public release.
